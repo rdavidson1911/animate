@@ -1,19 +1,24 @@
 <html>
 	<head>
-		<title>My first three.js app</title>
+		<title id="mytitle">My first three.js app</title>
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
 		</style>
 	</head>
 	<body>
-		<h1 id= "header">Robert and Brandon's Awesome Animations</h1>
-
+		<h1 id="header1">Robert and Brandon's Awesome Animations</h1>
+		<script>
 		var answer = prompt("Are you ready for some awesome animation?");
 		var name = prompt("What is your name");
 		alert("Get ready for some interesting questions " + name);
-		var headermain = document.getElementById("header");
-		alert(headermain.value + "Is a stupid Header Name");
+		var headermain = document.getElementById("header1");
+		var title1 = document.getElementById("mytitle");
+		console.log(title1.textContent);
+		console.log(headermain.textContent)
+		alert(headermain.textContent);
+		headermain.innerHTML("Stinky Butts");
+		</script>
 		<script src="js/three.js"></script>
 		<script>
 			var scene = new THREE.Scene();
