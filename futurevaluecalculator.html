@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Basic Form Template
+
+        </title>
+    </head>
+
+    <body>
+<h1>Enter Your Heading Here</h1>
+
+<p>Use this template to create a user input form</p><br>
+
+<form>
+    First Name:<br>
+    <input id="fname" type="text" name="firstname"><br>
+    Last Name:<br>
+    <input type="text" name="lastname"><br>
+    Current Savings:<br>
+    <input type="text" name="savings"><br>
+    Saved Annually:<br>
+    <input type="text" name="savedanually"><br>
+    Expected Return:<br>
+    <input type="text" name="expectedreturn"><br>
+    Compounds Per Period:<br>
+    <input type="text" name="compoundperperiod"><br><br>
+    <input type="button" value="Calculate" onclick="calculatesavings()">
+    
+    
+</form>
+
+<p id="ftrval">Future Value Here</p>
+<script>
+
+var pv = 5;
+var pmt = 5;
+var rate = .05;
+var period = 10;
+var cpnd = 1;
+
+var fv = pmt * (((1 + rate/period)^(cpnd*period) - 1) / (rate/cpnd));
+
+var para = document.getElementById("ftrval");
+
+para.innerHTML = "Wow - You will have $" + fv;
+
+alert("Wow - You will have $" + fv);
+
+
+
+
+function calculatesavings() {
+
+var fnamer = document.getElementById("fname").value;
+var fnamertext = fnamer;
+
+alert(fnamertext);
+
+
+}
+
+
+</script>
+
+A = PMT × (((1 + r/n)^(nt) - 1) ÷ (r/n))    
+
+
+
+    </body>
+</html>
