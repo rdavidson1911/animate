@@ -11,18 +11,15 @@
 <p>Use this template to create a user input form</p><br>
 
 <form>
-    First Name:<br>
-    <input id="fname" type="text" name="firstname"><br>
-    Last Name:<br>
-    <input type="text" name="lastname"><br>
-    Current Savings:<br>
-    <input type="text" name="savings"><br>
-    Saved Annually:<br>
-    <input type="text" name="savedanually"><br>
-    Expected Return:<br>
-    <input type="text" name="expectedreturn"><br>
+    Number of Periods:<br>
+    <input id="nper" type="text" name="periods"><br>
     Compounds Per Period:<br>
-    <input type="text" name="compoundperperiod"><br><br>
+    <input id="cmpnd" type="text" name="rate"><br>
+    Saved Annually:<br>
+    <input id="annualsavings" type="text" name="savedanually"><br>
+    Expected Return:<br>
+    <input id="rate" type="text" name="expectedreturn"><br>
+    <br><br>
     <input type="button" value="Calculate" onclick="calculatesavings()">
     
     
@@ -37,7 +34,7 @@ var rate = .05;
 var period = 10;
 var cpnd = 1;
 
-var fv = pmt * (((1 + rate/period)^(cpnd*period) - 1) / (rate/cpnd));
+
 
 var para = document.getElementById("ftrval");
 
@@ -50,9 +47,15 @@ alert("Wow - You will have $" + fv);
 
 function calculatesavings() {
 
+
+    var pv = 5;
+var pmt = document.getElementById("annualsavings").value;
+var rate = document.getElementById("rate").value;
+var period = document.getElementById("nper").value;
+var cpnd = document.getElementById("cmpnd").value;
 var fnamer = document.getElementById("fname").value;
 var fnamertext = fnamer;
-
+var fv = pmt * (((1 + rate/period)^(cpnd*period) - 1) / (rate/cpnd));
 alert(fnamertext);
 
 
