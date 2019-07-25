@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title id="mytitle">My first three.js app</title>
+		<title id="mytitle">Brandon and Robert Like Programming</title>
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
@@ -10,6 +10,11 @@
 		<h1 id="header1">Robert and Brandon's Awesome Animations</h1>
 		<script>
 		var answer = prompt("Are you ready for some awesome animation?");
+		
+		if(answer =="yes") {
+			alert("Googly Goo Eyes");
+		}
+		
 		var name = prompt("What is your name");
 		alert("Get ready for some interesting questions " + name);
 		var headermain = document.getElementById("header1");
@@ -17,7 +22,8 @@
 		console.log(title1.textContent);
 		console.log(headermain.textContent)
 		alert(headermain.textContent);
-		headermain.innerHTML("Stinky Butts");
+
+		title1.innerHTML("Title Now Changed");
 		</script>
 		<script src="js/three.js"></script>
 		<script>
