@@ -1,5 +1,6 @@
 <html>
     <head>
+        <script>alert("Welcome to the Page");</script>
         <title>Basic Form Template
 
         </title>
@@ -20,43 +21,42 @@
     Expected Return:<br>
     <input id="rate" type="text" name="expectedreturn"><br>
     <br><br>
-    <input type="button" value="Calculate" onclick="calculatesavings()">
+    <input type="button" onclick="calculateme()" value="Calculate">
     
     
 </form>
 
-<p id="ftrval">Future Value Here</p>
+
 <script>
-
-var pv = 5;
-var pmt = 5;
-var rate = .05;
-var period = 10;
-var cpnd = 1;
+alert("Testing Testing");
 
 
 
-var para = document.getElementById("ftrval");
-
-para.innerHTML = "Wow - You will have $" + fv;
-
-alert("Wow - You will have $" + fv);
+alert("Wow - You will have $");
 
 
 
 
-function calculatesavings() {
+function calculateme() {
 
 
-    var pv = 5;
-var pmt = document.getElementById("annualsavings").value;
+
+
+
+var pv = document.getElementById("annualsavings").value;
 var rate = document.getElementById("rate").value;
 var period = document.getElementById("nper").value;
 var cpnd = document.getElementById("cmpnd").value;
-var fnamer = document.getElementById("fname").value;
-var fnamertext = fnamer;
-var fv = pmt * (((1 + rate/period)^(cpnd*period) - 1) / (rate/cpnd));
-alert(fnamertext);
+
+
+
+
+fv = (pv * Math.pow(1 + (rate / cpnd), period * cpnd));
+
+
+alert(fv);
+
+alert((fv).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
 
 
 }
